@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane styleClass="login-root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.patino_erick_debermnitienda_poo.LoginController">
+
+    <VBox alignment="CENTER" spacing="0" styleClass="login-card">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="login-header">
+            <VBox.margin><Insets bottom="24" /></VBox.margin>
+            <Label styleClass="login-logo-icon" text="🛒" />
+            <VBox spacing="2">
+                <Label styleClass="login-brand-name" text="MiTienda" />
+                <Label styleClass="login-brand-sub" text="Sistema de Ventas" />
+            </VBox>
+        </HBox>
+
+        <!-- Title -->
+        <Label styleClass="login-title" text="Iniciar sesión">
+            <VBox.margin><Insets bottom="24" /></VBox.margin>
+        </Label>
+
+        <!-- Usuario -->
+        <VBox spacing="6">
+            <VBox.margin><Insets bottom="16" /></VBox.margin>
+            <Label styleClass="input-label" text="Usuario" />
+            <TextField fx:id="txtUsuario" promptText="Ej: admin" styleClass="input-field" />
+        </VBox>
+
+        <!-- Contraseña -->
+        <VBox spacing="6">
+            <VBox.margin><Insets bottom="16" /></VBox.margin>
+            <Label styleClass="input-label" text="Contraseña" />
+            <PasswordField fx:id="txtContrasena" styleClass="input-field" />
+        </VBox>
+
+        <!-- Rol -->
+        <VBox spacing="6">
+            <VBox.margin><Insets bottom="24" /></VBox.margin>
+            <Label styleClass="input-label" text="Rol" />
+            <ComboBox fx:id="cmbRol" maxWidth="Infinity" promptText="Selecciona el rol" styleClass="input-combo" />
+        </VBox>
+
+        <!-- Error -->
+        <Label fx:id="lblError" styleClass="login-error"  wrapText="true">
+            <VBox.margin><Insets bottom="12" /></VBox.margin>
+        </Label>
+
+        <!-- Botón -->
+        <Button maxWidth="Infinity" onAction="#handleIngresar" styleClass="btn-login" text="⬛ Ingresar">
+            <VBox.margin><Insets bottom="16" /></VBox.margin>
+        </Button>
+
+        <!-- Hint -->
+        <Label styleClass="login-hint" text="admin / 1234 / Administrador" />
+
+    </VBox>
+</StackPane>

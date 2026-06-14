@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.patino_erick_debermnitienda_poo.DashboardController"
+            styleClass="dashboard-root">
+
+    <!-- ===== SIDEBAR IZQUIERDO ===== -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="220" spacing="0">
+
+            <!-- Marca -->
+            <HBox styleClass="sidebar-brand" alignment="CENTER_LEFT" spacing="10">
+                <Label styleClass="sidebar-logo-icon" text="🛒"/>
+                <VBox spacing="1">
+                    <Label styleClass="sidebar-brand-name" text="MiTienda"/>
+                    <Label styleClass="sidebar-brand-sub"  text="Sistema de Ventas"/>
+                </VBox>
+            </HBox>
+
+            <!-- Perfil -->
+            <VBox styleClass="sidebar-profile" spacing="4">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="sidebar-avatar" text="👤"/>
+                    <VBox spacing="2">
+                        <Label fx:id="lblUsuario" styleClass="profile-name"  text="admin"/>
+                        <HBox alignment="CENTER_LEFT" spacing="4">
+                            <Label styleClass="online-dot" text="●"/>
+                            <Label styleClass="online-text" text="En línea"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+                <Label fx:id="lblRol" styleClass="role-badge" text="Administrador"/>
+            </VBox>
+
+            <!-- Separador -->
+            <Label styleClass="menu-section-label" text="MENÚ PRINCIPAL">
+                <VBox.margin><Insets top="8" bottom="4" left="16"/></VBox.margin>
+            </Label>
+
+            <!-- Items de menú -->
+            <VBox fx:id="menuInicio"     styleClass="menu-item" onMouseClicked="#handleInicio">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="🏠"/>
+                    <Label styleClass="menu-text" text="Inicio"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="menuProductos"  styleClass="menu-item menu-item-active" onMouseClicked="#handleProductos">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="📦"/>
+                    <Label styleClass="menu-text" text="Productos"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="menuCategorias" styleClass="menu-item" onMouseClicked="#handleCategorias">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="🏷"/>
+                    <Label styleClass="menu-text" text="Categorías"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="menuClientes"   styleClass="menu-item" onMouseClicked="#handleClientes">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="👥"/>
+                    <Label styleClass="menu-text" text="Clientes"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="menuVentas"     styleClass="menu-item" onMouseClicked="#handleVentas">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="🛒"/>
+                    <Label styleClass="menu-text" text="Ventas"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="menuReportes"   styleClass="menu-item" onMouseClicked="#handleReportes">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="📊"/>
+                    <Label styleClass="menu-text" text="Reportes"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="menuUsuarios"   styleClass="menu-item" onMouseClicked="#handleUsuarios">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="👤"/>
+                    <Label styleClass="menu-text" text="Usuarios"/>
+                </HBox>
+            </VBox>
+
+            <!-- Spacer -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Cerrar sesión -->
+            <VBox styleClass="menu-item menu-item-logout" onMouseClicked="#handleCerrarSesion">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="menu-icon" text="⏻"/>
+                    <Label styleClass="menu-text" text="Cerrar sesión"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <!-- ===== ÁREA PRINCIPAL ===== -->
+    <center>
+        <VBox styleClass="main-area" spacing="0">
+
+            <!-- Top bar -->
+            <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="16">
+                <Label styleClass="topbar-menu-icon" text="☰"/>
+                <Label fx:id="lblHeaderTitle" styleClass="topbar-title" text="Productos" HBox.hgrow="ALWAYS"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox styleClass="topbar-user" alignment="CENTER" spacing="8">
+                    <Label styleClass="topbar-avatar" text="👤"/>
+                    <VBox spacing="1">
+                        <Label styleClass="topbar-username" text="admin"/>
+                        <Label styleClass="topbar-role"     text="Administrador"/>
+                    </VBox>
+                </HBox>
+            </HBox>
+
+            <!-- Content -->
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS" styleClass="content-area"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
